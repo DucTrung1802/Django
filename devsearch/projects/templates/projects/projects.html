@@ -1,7 +1,6 @@
-{% extends "main.html" %}
-{% block content %}
+{% extends "main.html" %} {% block content %}
 
-<P>Hello you are on the {{page}} page</P>
+<p>Hello you are on the {{page}} page</p>
 
 {% if number > 10 %}
 <p>Number is greater than 10</p>
@@ -11,14 +10,14 @@
 <p>Number is less than 10</p>
 {% endif %}
 
-<hr>
+<hr />
 
 <h1>Projects</h1>
 
 <ul>
-    {% for project in projects %}
-        <li>Title: {{project.title}}</li>
-    {% endfor %}
+  {% for project in projects %}
+  <li>Title: <a href="{% url "project" project.id %}">{{project.title}}</a> --- Body: {{project.body}}</li>
+  {% endfor %}
 </ul>
 
 {% endblock content %}
